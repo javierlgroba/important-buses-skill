@@ -24,6 +24,8 @@ class ImportantBuses(MycroftSkill):
         if bus_place is not None:
             self.log.info(("The place is {}").format(bus_place))
             if (bus_place == 'work'):
+                self.line106 = sys.maxsize
+                self.line204 = sys.maxsize
                 self.get_buses_work()
                 text106 = self.unknownString
                 text204= self.unknownString
@@ -39,6 +41,8 @@ class ImportantBuses(MycroftSkill):
                     text204 = ('{} minutes').format(self.line204)
                 self.speak_dialog('buses.to.work', {'L106': text106, 'L204': text204})
             elif (bus_place == 'martha' or bus_place == 'home'):
+                self.lineM46 = sys.maxsize
+                self.lineM462 = sys.maxsize
                 self.get_buses_martha()
                 textM46 = self.unknownString
                 textM462 = self.unknownString
